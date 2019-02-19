@@ -1,0 +1,127 @@
+@prefix : <http://www.prc.di.uminho.pt/2019/prizes#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.prc.di.uminho.pt/2019/prizes> .
+
+<http://www.prc.di.uminho.pt/2019/prizes> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/prizes#hasLaureate
+:hasLaureate rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasPrize ;
+             rdfs:domain :Prize ;
+             rdfs:range :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#hasPrize
+:hasPrize rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/prizes#category
+:category rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Prize .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#firstname
+:firstname rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#motivation
+:motivation rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#overallMotivation
+:overallMotivation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Prize .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#share
+:share rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Person .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Prize .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/prizes#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#Prize
+:Prize rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/prizes#2018physics
+<http://www.prc.di.uminho.pt/2019/prizes#2018physics> rdf:type owl:NamedIndividual ,
+                                                               :Prize ;
+                                                      :hasLaureate <http://www.prc.di.uminho.pt/2019/prizes#960> ,
+                                                                   <http://www.prc.di.uminho.pt/2019/prizes#961> ,
+                                                                   <http://www.prc.di.uminho.pt/2019/prizes#962> ;
+                                                      :category "physics" ;
+                                                      :overallMotivation "“for groundbreaking inventions in the field of laser physics”" ;
+                                                      :year 2018 .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#960
+<http://www.prc.di.uminho.pt/2019/prizes#960> rdf:type owl:NamedIndividual ,
+                                                       :Person ;
+                                              :firstname "Arthur" ;
+                                              :id 960 ;
+                                              :motivation "for the optical tweezers and their application to biological systems" ;
+                                              :share 2 ;
+                                              :surname "Ashkin" .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#961
+<http://www.prc.di.uminho.pt/2019/prizes#961> rdf:type owl:NamedIndividual ,
+                                                       :Person ;
+                                              :firstname "Gérard" ,
+                                                         "Mourou" ;
+                                              :id 961 ;
+                                              :motivation "for their method of generating high-intensity, ultra-short optical pulses" ;
+                                              :share 4 .
+
+
+###  http://www.prc.di.uminho.pt/2019/prizes#962
+<http://www.prc.di.uminho.pt/2019/prizes#962> rdf:type owl:NamedIndividual ,
+                                                       :Person ;
+                                              :firstname "Donna" ;
+                                              :id 962 ;
+                                              :motivation "for their method of generating high-intensity, ultra-short optical pulse" ;
+                                              :share 4 ;
+                                              :surname "Strickland" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,11 @@
+*** CLASSES ***
+-> Prize
+    (year, category, overallMotivation, laureates)
+
+-> Person
+    (id, firstname, surname, motivation, share)
+
+
+MBP-de-Tiago:TPC2 tiagofraga$ rapper -c -i turtle bdprizes.ttl 
+rapper: Parsing URI file:///Users/tiagofraga/Desktop/PLC/PRC/TPC/Local/TPC2/bdprizes.ttl with parser turtle
+rapper: Parsing returned 10395 triples
