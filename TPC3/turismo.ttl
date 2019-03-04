@@ -1,0 +1,364 @@
+@prefix : <http://www.prc.di.uminho.pt/2019/turismo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.prc.di.uminho.pt/2019/turismo> .
+
+<http://www.prc.di.uminho.pt/2019/turismo> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/turismo#beenVisited
+:beenVisited rdf:type owl:ObjectProperty ;
+             owl:inverseOf :visitInst ;
+             rdf:type owl:InverseFunctionalProperty .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#goneTo
+:goneTo rdf:type owl:ObjectProperty ;
+        owl:inverseOf :hasBeenVisited ;
+        rdfs:domain :Turista ;
+        rdfs:range :Evento .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#hasBeenVisited
+:hasBeenVisited rdf:type owl:ObjectProperty ,
+                         owl:InverseFunctionalProperty .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#hasEvents
+:hasEvents rdf:type owl:ObjectProperty ;
+           rdfs:domain :Cidade ;
+           rdfs:range :Evento .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#hasInstituintions
+:hasInstituintions rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Cidade ;
+                   rdfs:range :Instituicao .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#hasMonument
+:hasMonument rdf:type owl:ObjectProperty ;
+             rdfs:domain :Passeio ;
+             rdfs:range :Instituicao .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#hasTourists
+:hasTourists rdf:type owl:ObjectProperty ;
+             rdfs:domain :Cidade ;
+             rdfs:range :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#visitInst
+:visitInst rdf:type owl:ObjectProperty ;
+           rdfs:domain :Turista ;
+           rdfs:range :Instituicao .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/turismo#data
+:data rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Evento ,
+                  :Passeio .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#duracao
+:duracao rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Evento ,
+                     :Passeio .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#horario
+:horario rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Monumento ,
+                     :Museu .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#idade
+:idade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#morada
+:morada rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Instituicao ,
+                    :Nacional .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#nacionalidade
+:nacionalidade rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Internacional .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Cidade ,
+                  :Evento ,
+                  :Instituicao ,
+                  :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#preco
+:preco rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Passeio .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#profissao
+:profissao rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#sinonimos
+:sinonimos rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Cidade .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Cidade
+:Cidade rdf:type owl:Class .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Evento
+:Evento rdf:type owl:Class .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Instituicao
+:Instituicao rdf:type owl:Class .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Internacional
+:Internacional rdf:type owl:Class ;
+               rdfs:subClassOf :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Monumento
+:Monumento rdf:type owl:Class ;
+           rdfs:subClassOf :Instituicao .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Museu
+:Museu rdf:type owl:Class ;
+       rdfs:subClassOf :Instituicao .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Nacional
+:Nacional rdf:type owl:Class ;
+          rdfs:subClassOf :Turista .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Passeio
+:Passeio rdf:type owl:Class .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Praca
+:Praca rdf:type owl:Class ;
+       rdfs:subClassOf :Instituicao .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#Turista
+:Turista rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.prc.di.uminho.pt/2019/turismo#arcoPortaNova
+:arcoPortaNova rdf:type owl:NamedIndividual ,
+                        :Monumento ;
+               :horario "9H-17H" ;
+               :morada "Rua ..." ;
+               :nome "Arco da Porta Nova" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#bomJesus
+:bomJesus rdf:type owl:NamedIndividual ,
+                   :Monumento ;
+          :horario "9H-17H" ;
+          :morada "Rua ..." ;
+          :nome "Santuário do Bom Jesus do Monte" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#braga
+:braga rdf:type owl:NamedIndividual ,
+                :Cidade ;
+       :nome "Braga" ;
+       :sinonimos "Bracara Augusta, Cidade Romana, Cidade Barroca" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#bragaRomana
+:bragaRomana rdf:type owl:NamedIndividual ,
+                      :Evento ;
+             :data "1 de Janeiro de 2019" ;
+             :duracao "1 semana" ;
+             :nome "Braga Romana" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#internacional1
+:internacional1 rdf:type owl:NamedIndividual ,
+                         :Internacional ;
+                :idade 27 ;
+                :nacionalidade "Mali" ;
+                :nome "Moussa Marega" ;
+                :profissao "Jogador de Futebol" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#internacional2
+:internacional2 rdf:type owl:NamedIndividual ,
+                         :Internacional ;
+                :idade 37 ;
+                :nacionalidade "Espanha" ;
+                :nome "Iker Casillas" ;
+                :profissao "Jogador de Futebol" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#internacional3
+:internacional3 rdf:type owl:NamedIndividual ,
+                         :Internacional ;
+                :idade 26 ;
+                :nacionalidade "Argelia" ;
+                :nome "Yacine Brahimi" ;
+                :profissao "Jogador de Futebol" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#jardimSantaBarbara
+:jardimSantaBarbara rdf:type owl:NamedIndividual ,
+                             :Praca ;
+                    :morada "Rua ..." ;
+                    :nome "Jardim de Santa Bárbara" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#mosteiroTibaes
+:mosteiroTibaes rdf:type owl:NamedIndividual ,
+                         :Monumento ;
+                :horario "9H-17H" ;
+                :morada "Rua ..." ;
+                :nome "Mosteiro de São Martinho de Tibães" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#museuBiscainhos
+:museuBiscainhos rdf:type owl:NamedIndividual ,
+                          :Museu ;
+                 :horario "9H-17H" ;
+                 :morada "Rua ..." ;
+                 :nome "Museu dos Biscaínhos" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#museuVilarinhoFurnas
+:museuVilarinhoFurnas rdf:type owl:NamedIndividual ,
+                               :Museu ;
+                      :horario "9H-17H" ;
+                      :morada "Rua ..." ;
+                      :nome "Museu de Vilarinho das Furnas" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#nacional1
+:nacional1 rdf:type owl:NamedIndividual ,
+                    :Nacional ;
+           :idade 24 ;
+           :morada "Esposende" ;
+           :nome "Tiago Fraga" ;
+           :profissao "Estudante" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#nacional2
+:nacional2 rdf:type owl:NamedIndividual ,
+                    :Nacional ;
+           :idade 22 ;
+           :morada "Vila Real" ;
+           :nome "Joao Gomes" ;
+           :profissao "Estudante" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#nacional3
+:nacional3 rdf:type owl:NamedIndividual ,
+                    :Nacional ;
+           :idade 21 ;
+           :morada "Porto" ;
+           :nome "Ruben Neves" ;
+           :profissao "Jogador de Futebol" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#pacoBracarense
+:pacoBracarense rdf:type owl:NamedIndividual ,
+                         :Monumento ;
+                :horario "9H-17H" ;
+                :morada "Rua ..." ;
+                :nome "Paço Arquiepiscopal Bracarense" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#palacioBiscainhos
+:palacioBiscainhos rdf:type owl:NamedIndividual ,
+                            :Monumento ;
+                   :horario "9H-17H" ;
+                   :morada "Rua ..." ;
+                   :nome "Palácio dos Biscainhos" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#palacioRaio
+:palacioRaio rdf:type owl:NamedIndividual ,
+                      :Monumento ;
+             :horario "9H-17H" ;
+             :morada "Rua ..." ;
+             :nome "Palácio do Raio" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#pracaRepublica
+:pracaRepublica rdf:type owl:NamedIndividual ,
+                         :Praca ;
+                :morada "Rua ..." ;
+                :nome "Praça da República" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#sameiro
+:sameiro rdf:type owl:NamedIndividual ,
+                  :Monumento ;
+         :horario "9H-17H" ;
+         :morada "Rua ..." ;
+         :nome "Santuário do Bom Jesus do Monte" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#saoJoao
+:saoJoao rdf:type owl:NamedIndividual ,
+                  :Evento ;
+         :data "24 de Junho de 2019" ;
+         :duracao "1 dia" ;
+         :nome "Sao Joao de Braga" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#seBraga
+:seBraga rdf:type owl:NamedIndividual ,
+                  :Monumento ;
+         :horario "9H-17H" ;
+         :morada "Rua ..." ;
+         :nome "Sé de Braga" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#semanaSanta
+:semanaSanta rdf:type owl:NamedIndividual ,
+                      :Evento ;
+             :data "13 de Maio de 2019" ;
+             :duracao "1 semana" ;
+             :nome "Semana Santa de Braga" .
+
+
+###  http://www.prc.di.uminho.pt/2019/turismo#termasMaximinos
+:termasMaximinos rdf:type owl:NamedIndividual ,
+                          :Monumento ;
+                 :horario "9H-17H" ;
+                 :morada "Rua ..." ;
+                 :nome "Termas romanas de Maximinos" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,20 @@
+Arco da Porta Nova -> Monumento
+Jardim de Santa Bárbara -> Praca
+Museu dos Biscaínhos -> Museu
+Praça da República -> Praca
+Palácio do Raio -> Monumento
+Sé de Braga -> Monumento
+Santuário do Bom Jesus do Monte -> Monumento
+Santuário do Sameiro -> Monumento
+Mosteiro de São Martinho de Tibães -> Monumento
+Museu de Vilarinho das Furnas -> Museu
+Paço Arquiepiscopal Bracarense -> Monumento
+Termas romanas de Maximinos -> Monumento
+Palácio dos Biscainhos -> Monumento
+ 
+São João em Braga -> Evento
+Semana Santa -> Evento
+Braga Romana -> Evento
+
+
+
