@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifesto>
+    <meta>
+        <id>PRC2019:A74092::TP4</id>
+        <titulo>Exercício Nº 1: Tabela Periódica dos Elementos</titulo>
+        <subtitulo>TP4</subtitulo>
+        <dinicio>11 de Março de 2019</dinicio>
+        <dfim>18 de Março de 2019</dfim>
+        <supervisor>
+            <nome>José Carlos Ramalho</nome>
+            <email>jcr@di.uminho.pt</email>
+            <website>http://www.di.uminho.pt/~jcr</website>
+        </supervisor>
+    </meta>
+    <equipa>
+        <elemento>
+            <id>A74092</id>
+            <nome>Tiago Miguel Fraga Santos</nome>
+            <email>a74092@alunos.uminho.pt</email>
+            <website>https://www.facebook.com/tiago.fraga.54</website>
+            <foto path="me.jpeg"/>
+        </elemento>
+    </equipa>
+    <resumo>
+        <para>
+           O trabalho proposto faz parte da serie de trabalhos para casa da unidade curricular de <b>Processamento e Representação de Conhecimento</b> inserida no perfil de 
+           <i>Processamento de Linguagens e Conhecimento</i> do 4ºano do Mestrado Integrado em Engenharia Informática da Universidade do Minho.
+        </para>
+    </resumo>
+    <resultados>
+        <resultado path="https://github.com/TiagoFraga/PRC2019-TPC">Link do Git dos TPC's</resultado>
+
+        
+    </resultados>
+</manifesto>

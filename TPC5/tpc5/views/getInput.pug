@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .w3-container.w3-center
+        .w3-card-4.w3-center
+            header.w3-header.w3-blue-grey
+                h1.w3-center 
+                    b Interrogando o GraphDB com SPARQL
+            .w3-container
+              fieldset
+                legend
+                  b= rep
+                .w3-bar-block
+                  .w3-bar-item
+                    form.w3-container(method="POST" action="/input/"+rep)
+                      textarea.w3-border(rows="5" cols="25" class="w3-input" placeholder="Input here..." name="intext" id="intext")
+                      br
+                      button.w3-button.w3-blue-grey(type="submit",name="proc") Processar
+                      br
+                  .w3-bar-item
+                    |&nbsp;
+                    |&nbsp;
+                    |&nbsp;
+                    button.w3-button.w3-blue-grey(type="submit",id="novo") Novo  
+            br
+            footer.w3-container.w3-blue-grey
+                address Gerado por tpc5APP by tmf

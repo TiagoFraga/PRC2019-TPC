@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .w3-container.w3-center
+        .w3-card-4.w3-center
+            header.w3-header.w3-blue-grey
+                h1.w3-center 
+                    b WebSparqlAPP 
+            .w3-container
+                .w3-row
+                    .w3-col.m6.l3
+                        h2
+                            b GraphDb Repositories
+                    .w3-col.m6.m4    
+                        table.w3-center.w3-table-all(id='ficheiros')
+                            tr
+                                th Repositories
+                                th Size
+                            each r in repositories
+                                tr
+                                    td
+                                        b
+                                            a(href='/input/' + r.id)= r.id
+                                    td= r.size
+                br
+            footer.w3-container.w3-blue-grey
+                address Gerado por tpc5APP by tmf
+        
+  
