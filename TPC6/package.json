@@ -1,0 +1,16 @@
+{
+  "name": "tpc6",
+  "version": "1.0.0",
+  "description": "XSLX to XML",
+  "main": "xslx2xml.js",
+  "scripts": {
+    "test": "node xslx2xml.js"
+  },
+  "author": "JG",
+  "license": "ISC",
+  "dependencies": {
+    "jsonfile": "^5.0.0",
+    "xlsx-to-json-lc": "^0.5.0",
+    "xml2js": "^0.4.19"
+  }
+}
