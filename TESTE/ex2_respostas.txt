@@ -1,0 +1,115 @@
+**** Pergunta 1
+
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nome ?data where { 
+	?comp a :Compositor.
+    ?comp :nome ?nome.
+    ?comp :dataNascimento ?data.
+} limit 100 
+
+
+**** Pergunta 2
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nome where { 
+	?obra a :Obra.
+    ?obra :temCompositor ?comp.
+    ?comp :nome "Valdemar Sequeira".
+    ?obra :nome ?nome.
+} limit 100 
+
+
+**** Pergunta 3
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select (count (?s) as ?num) where { 
+	?s a :Obra
+} limit 100 
+
+
+
+**** Pergunta 4
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select (count (?inst) as ?num) where { 
+	?s a :Obra.
+    ?s :temPartituraInstrumento ?inst
+} 
+
+
+
+
+**** Pergunta 5
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nome ?dur where { 
+	?s a :Obra.
+    ?s :duracao ?dur.
+    ?s :nome ?nome
+} order by desc (?dur)
+limit 1
+
+
+
+**** Pergunta 6
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nomeEvento (sum(?dur) as ?n) where { 
+	?e a :Evento.
+    ?e :nome ?nomeEvento.
+    ?e :temObra ?ob.
+    ?ob :duracao ?dur.
+
+} group by(?nomeEvento)
+
+
+
+
+**** Pergunta 7
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nomei (count(?nomeob) as ?n) where { 
+	?i a :Instrumento.
+    ?i :participamEmObra ?ob.
+    ?i :nome ?nomei.
+    ?ob :nome ?nomeob.
+
+} group by ?nomei
+
+
+
+**** Pergunta 8
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select (count(?m) as ?n) where { 
+	?m a :Marcha.
+} 
+
+
+
+**** Pergunta 9
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nome ?dur where { 
+	?m a :Marcha.
+    ?m :nome ?nome.
+    ?m :duracao ?dur
+} order by desc (?dur)
+limit 1
+
+
+**** Pergunta 10
+
+PREFIX : <http://prc.di.uminho.pt/2019/arquivo#>
+select ?nome ?data where { 
+	?e a :Evento.
+    ?e :nome ?nome.
+    ?e :data ?data.
+}  order by(?data) 
+limit 0
+
+
+
+
+

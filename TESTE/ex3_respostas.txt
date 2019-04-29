@@ -1,0 +1,26 @@
+**** Pergunta 1
+
+SELECT (count (?s) as ?n) WHERE {
+?s a dbo:River.
+}
+
+R: 35413
+
+**** Pergunta 2
+
+
+
+**** Pergunta 3
+
+
+
+
+**** Pergunta 4
+
+
+
+**** Pergunta 5
+
+
+
+
